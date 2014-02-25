@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml-rails'
+gem 'mechanize'
 
 group :development, :test do
   gem 'pry-rails'
@@ -18,4 +19,5 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'webmock'
 end

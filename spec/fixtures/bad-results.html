@@ -1,0 +1,260 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<META HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+
+<META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>
+Voter Services - Error Page
+</title>
+    <!-- TemplateEndEditable -->
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="Maryland, State, Board of Elections, voting, polling place, campaigns, candidacy, voter registration, election, elections, campaign finance, register, vote, HAVA, petitions, voting system, Maryland State Board of Elections, results, overseas">
+    <meta name="author" content="Maryland State Board of Elections">  
+    
+    <!-- Step 1 : Link to MD favicon -->
+    <link rel="shortcut icon" href="../egov/img/icons/favicon.ico">
+    <!-- Necessary Bootstrap.css for responsive design -->
+    <link href="../egov/frameworks/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="../egov/css/agency-styles.css" rel="stylesheet">
+    <link href="../egov/css/sbe-agency-styles.css" rel="stylesheet">
+    <link href="../egov/css/links.css" rel="stylesheet">
+    <!-- TemplateBeginEditable name="IE_Includes" -->
+    <!--[if ie 8]>
+    	<link id="css_IE8" href="egov/css/ie/ie8.css" rel="stylesheet" media="screen" />
+    <![endif]-->
+    <!--[if ie 7]>
+    	<link id="css_IE7" href="egov/css/ie/ie7.css" rel="stylesheet" media="screen" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+	    <script src="egov/js/html5shiv.js"></script>
+    <![endif]-->
+	<!-- TemplateEndEditable -->
+	
+    <script src="../egov/js/jquery-1.8.2.min.js" type="text/javascript" ></script>
+ <!--Step 4 : Necessary .js for  Statewide nav bar script -->
+	<script type="text/javascript" src="http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js"></script>
+     
+  <!-- Step 8: Necessary .js and .css for statewide alerts  -->   
+    <link rel="stylesheet" href="../egov/css/jquery-ui-1.10.3.min.css" />
+    <script src="../egov/js/jquery-ui-1.10.3.min.js"></script>
+  	<script type='text/javascript' src='../egov/js/MDAlertCode.js'></script>
+    
+    <!--Step 7 : Necessary .js to implement statewide search suggestion, modify .js with search collection name -->
+	<script type='text/javascript' src='../egov/js/MDsearchsuggestion.js'></script> 
+    <!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+     <!--WEB PAGE CSS GOES HERE
+    ***************************************************************-->
+    <!--<link href="~/Styles/jquery-ui.css" rel="stylesheet" type="text/css" />-->
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+     
+
+    <!--WEB PAGE JAVASCRIPT GOES HERE
+    ***************************************************************-->
+    
+
+
+<!--google analytics script-->
+ <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-32945568-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+   </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="skipNav">
+            <a href="#primary_content_Block">Skip to Main Content</a>
+        </div>
+        <div id="mdgov_globalSiteWrapper">
+            <div class="row-fluid">
+                <div id="mdgov_TopSliverBar" class="clearfix">
+                    <div id="mdgov_TopSliverBarContent" class="clearfix">
+                        <div id="mdgov_sliverLeft">
+                            <div id="mdgov_mobileNavButton" class="hidden-desktop">
+                                <a href="#"><i class="icon-white icon-align-justify">&nbsp;</i> <span>Menu</span> </a>
+                            </div>
+                        </div>
+                        <div id="mdgov_sliverRight">
+                        <ul id="mdgov_settingsNav" class="cl_base_hNav">
+                        <!-- STEP 4: displays statewide nav bar -->
+                        <script type="text/javascript">
+                            YUI().use(function (Y) {
+                                var url = "http://www.doit.maryland.gov/branding/statewideNavigationDefer.js",
+	             						obj = Y.Get.script(url, {
+	             						    onSuccess: function () {
+	             						        document.getElementById('mdgov_sliverRight').innerHTML = showStatewideNavigation("white");
+	             						    }
+	             						});
+                            });
+	   						</script>
+	
+							<NOSCRIPT>You must have Javascript enabled to see this menu.</NOSCRIPT>
+                                                
+                          </ul>
+                            <!-- END statewide nav bar -->  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="headerBlock" class="row-fluid">
+                <div id="header" class="span12">
+                    <div id="headerBackground">
+                        <div class="headerBgImg clearfix">
+                            <div class="row-fluid">
+                                <div id="agency_branding" class="clearfix">
+                                    <div id="mdgov_crownLogo" class="span2 clearfix">
+                                        <div id="mdgov_homeLink">
+                                        <!-- Step 2 : MD Crown logo and link -->
+                                            <a href="http://www.maryland.gov/">
+                                                <span class="hidden-accessible">Maryland.gov Home</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="mdgov_agencyName" class="span7 clearfix">
+                                        <div id="mdgov_agencyTitle">
+                                        <!-- Step 3 : Add Agency Title and link to home page -->
+                                            <a href="#">
+                                                <img src="../egov/img/sbetitle.png" alt="The Maryland State Board of Elections" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="mdgov_agencyHeader" class="span3 clearfix">
+                                        <div id="mdgov_agencyLogo">
+                                         <!-- Step 5: Optional Agency logo and link, replace with agency_logo_blank.png if none -->
+                                            <a href="#">
+                                                <img src="../egov/img/SBELogo.png" alt="State Board of Elections Logo" />
+                                            </a>
+                                        </div>
+                                        <div id="mdgov_socialNav" class="clearfix">
+                                        <!-- Step 6: Configure Agency social media icons and links -->
+                                             <ul class="cl_base_hNav cl_socialNav">
+                                            <li><a href="https://www.facebook.com/MarylandStateBoardofElections" class="sm-facebook" title="Facebook">Facebook</a> </li>
+                                            <li><a href="https://twitter.com/md_sbe" class="sm-twitter" title="Twitter">Twitter</a> </li>
+                                            <!--<li><a href="#" class="sm-googleplus" title="Google+">Google Plus</a></li>-->
+                                            
+                                            <li><a href="http://www.maryland.gov/pages/social_media.aspx" class="sm-all" title="MD Social Media Directory">Social Media Directory</a> </li>
+                                            </ul>
+                                         <!--if no agy social media,replace above UL with code below-->
+										<!--<ul class="cl_base_hNav cl_socialNavDirectory">
+                            			<li class="last-child"><a href="http://www.maryland.gov/pages/social_media.aspx" class="sm-directory" title="MD Social Media Directory">MD Social Media Directory</a></li>
+                        				</ul>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="navBlock" class="row-fluid">
+                <div id="mdgov_enterpriseNavigation" class="clearfix">
+                <!-- Step 9 : Add Main navigation links -->
+                    <nav>
+    				<ul>
+                           <li><a href="PollingPlaceSearch" class="level0">find your polling place</a></li>
+                   		 	<li><a href="VoterSearch" class="level0">lookup your voter info</a></li>
+                    		<li><a href="OnlineVoterRegistration" class="level0">register to vote</a></li>
+                    		<li><a href="OnlineVoterRegistration" class="level0">request a ballot</a></li>                              
+                        </ul>                
+                    </nav> 
+                </div>
+        </div>
+		<!--begin primary content area-->
+        <form method="post" action="GeneralError" id="form1" autocomplete="off">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+4ncJa2bgPtuJTQxVoPe80GVAmpFM4Blwg88grHl28QDR8fcSyv0aZQqEfHmeY3NhiUiENrBSyeJmavzelTmOadbxa3rI3NoIvhJueVJMMwBoFs34MkYZEtM9zBzvR4BVi/yhBaCs4pLsK+vtdvbR2aXGMo=" />
+
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="0gL0VYEOGgysWXKIAC0K8ibc05C/gahFwcZFf65j2NOsHQWI6SWYbuGR+pgjDO4uVkf8vVLNrrC5lrBqAElAzxuFgonBwhzXFyTv87J0O7+gj1HpubN3rvwGlpBRYzGrIRUkLaOZ2esFLsDSg21hZH1n+WYJ17ne+qta3U/v8TLsJjgv" />
+         <div class="row-fluid">
+				<!-- TemplateBeginEditable name="ContentRegion" -->
+               
+
+                   <!--WEB PAGE HEADER GOES HERE
+                ***************************************************************-->
+                  <div id="sectionhead">
+                   <h1> 
+Voter Services - Error Page
+ 
+                </h1>
+                 <span id="languagedropdown"><select name="ctl00$listLanguages" id="listLanguages" title="Website Language Options">
+	<option selected="selected" value="en">English</option>
+	<option value="es">Espa&#241;ol</option>
+
+</select> 
+                           <input type="submit" name="ctl00$btnChangeLanguage" value="Change language" id="btnChangeLanguage" style="font-size: 80%;" /></span> 
+                           <div style="clear:both;"></div>
+                           </div>
+        </div>
+                     <!--WEB PAGE CONTENT GOES HERE
+                ***************************************************************-->
+                 
+<p>
+An unexpected error has occurred.  Please try again in a few moments.  
+If you continue to have difficulties, please contact the 
+<a href="mailto:voterservicesnotices@elections.state.md.us?subject=Voter Services Web Page Error">Website Administrator</a>.
+</p>
+
+                </form>
+				<!-- TemplateEndEditable -->       
+         </div>
+ <div class="row-fluid">
+                <div id="footer_block" class="clearfix">
+                    <div class="span9">
+                        <div id="footer_left">
+                            <div class="cl_base_hNav footerLinks">
+                            <!-- Step 12: Add agency footer links -->
+                                <ul>
+                               <li><a href="http://elections.maryland.gov/about/index.html">About Us</a></li>                      <li><a href="about/contact.html">Contact SBE</a></li>
+                                <li><a href="http://elections.maryland.gov/about/county_boards.html">Contact your Local Board of Elections</a></li> 
+                      			<li><a href="http://elections.maryland.gov/privacy.html">Privacy</a></li>
+                      			<li><a href="http://elections.maryland.gov/accessibility.html">Accessibility</a></li> 
+                                </ul>
+                            </div>
+                            <!-- Step 13 : Add agency address and phone -->
+                            <p>151 West Street, Suite 200, Annapolis, MD 21401</p>
+              			<p>(410) 269-2840 / (800) 222-8683</p>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div id="footer_right" class="clearfix">
+                            <div class="mdgov_socialNav">
+                            <!-- Step 6 : configure footer social media icons and links -->
+                                <ul class="cl_base_hNav cl_socialNav">
+                                    <li><a href="https://www.facebook.com/MarylandStateBoardofElections" class="sm-facebook" title="Facebook">Facebook</a></li>
+                            	<li><a href="https://twitter.com/md_sbe" class="sm-twitter" title="Twitter">Twitter</a></li>
+                                    <!-- <li><a href="#" class="sm-googleplus" title="Google+">Google Plus</a></li>
+                                    <li><a href="#" class="sm-flickr" title="Flickr">Flickr</a></li>
+                                    <li><a href="#" class="sm-youtube" title="YouTube">YouTube</a></li>-->
+                                    <li class="last-child"><a href="http://www.maryland.gov/pages/social_media.aspx" class="sm-all" title="MD Social Media Directory">MD Social Media Directory</a></li>
+                                </ul>
+                                <!--if no agy social media,replace above UL with code below-->
+								<!--<ul class="cl_base_hNav cl_socialNavDirectory">
+                            			<li class="last-child"><a href="http://www.maryland.gov/pages/social_media.aspx" class="sm-directory" title="MD Social Media Directory">MD Social Media Directory</a></li>
+                        		</ul>-->
+                            </div>
+                        </div>
+                    </div>
+           		</div>
+      		</div>
+		</div>
+        <script src="../egov/js/base.js"></script>
+</body>
+</html>
