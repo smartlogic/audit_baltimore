@@ -7,9 +7,12 @@ class SignersController < ApplicationController
 
   def update
     current_signer.update_attributes(update_signer_params)
-    current_signer.verify!
 
-    redirect_to verified_signer_url
+    if current_signer.verify!
+      redirect_to verified_signer_url
+    else
+      redirect_to verify_signer_url, :flash => { :error => "There was an issue" }
+    end
   end
 
   private

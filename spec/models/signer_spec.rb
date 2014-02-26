@@ -17,10 +17,27 @@ describe Signer do
     end
   end
 
-  it "should verify the user's information" do
-    signer.verify!(TestVerifier)
+  class TestVerifierFail
+    def initialize(signer)
+    end
 
-    expect(signer.address_line_1).to eq("123 Elm St")
-    expect(signer.address_line_2).to eq("Baltimore, MD 21224")
+    def verify!
+    end
+  end
+
+  context "verify user information" do
+    example "good data" do
+      signer.verify!(TestVerifier)
+
+      expect(signer.address_line_1).to eq("123 Elm St")
+      expect(signer.address_line_2).to eq("Baltimore, MD 21224")
+    end
+
+    example "bad data" do
+      signer.verify!(TestVerifierFail)
+
+      expect(signer.address_line_1).to be_nil
+      expect(signer.address_line_2).to be_nil
+    end
   end
 end
