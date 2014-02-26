@@ -9,6 +9,9 @@ class CreateSigners < ActiveRecord::Migration
       t.date :birthday
       t.string :zipcode
 
+      t.string :address_line_1
+      t.string :address_line_2
+
       t.timestamps
     end
   end

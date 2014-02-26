@@ -1,11 +1,11 @@
 class VoterVerifier
-  def initialize(first_name, last_name, year, month, day, zipcode)
-    @first_name = first_name
-    @last_name = last_name
-    @year = year
-    @month = month
-    @day = day
-    @zipcode = zipcode
+  def initialize(signer)
+    @first_name = signer.first_name
+    @last_name = signer.last_name
+    @year = signer.birthday.year
+    @month = signer.birthday.month
+    @day = signer.birthday.day
+    @zipcode = signer.zipcode
   end
 
   def verify!

@@ -6,7 +6,8 @@ class SignersController < ApplicationController
   end
 
   def update
-    current_signer.update(signer_params)
+    current_signer.update_attributes(update_signer_params)
+    current_signer.verify!
 
     redirect_to verified_signer_url
   end
@@ -23,6 +24,6 @@ class SignersController < ApplicationController
   end
 
   def update_signer_params
-    params.require(:signer).permit(:first_name, :last_name, :zipcode, :birthday_1i, :birthday_2i, :birthday_3i)
+    params.require(:signer).permit(:first_name, :last_name, :zipcode, "birthday(1i)", "birthday(2i)", "birthday(3i)")
   end
 end

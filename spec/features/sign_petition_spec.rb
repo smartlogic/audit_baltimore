@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe "Signing the peition" do
   example "User signing the petition" do
+    stub_request(:get, "https://voterservices.elections.state.md.us/VoterSearch").
+      to_return(:body => File.read("spec/fixtures/search.html"), :headers => { "Content-Type" => "text/html" })
+    stub_request(:post, "https://voterservices.elections.state.md.us/VoterSearch").
+      to_return(:body => File.read("spec/fixtures/results.html"), :headers => { "Content-Type" => "text/html" })
+
     visit root_path
 
     fill_in "Email", :with => "eric@example.com"
@@ -15,6 +20,6 @@ describe "Signing the peition" do
     fill_in "Zip Code", :with => "21224"
     click_on "Verify"
 
-    page.should have_content("Verified!")
+    expect(page).to have_content("123 Elm St")
   end
 end
