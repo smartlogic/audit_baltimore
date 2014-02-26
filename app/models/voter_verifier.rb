@@ -3,8 +3,8 @@ class VoterVerifier
     @first_name = signer.first_name
     @last_name = signer.last_name
     @year = signer.birthday.year
-    @month = signer.birthday.month
-    @day = signer.birthday.day
+    @month = signer.birthday.strftime("%m")
+    @day = signer.birthday.strftime("%d")
     @zipcode = signer.zipcode
   end
 
