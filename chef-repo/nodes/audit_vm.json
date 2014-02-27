@@ -50,6 +50,7 @@
     "rbenv::ruby_build",
     "nginx::repo",
     "nginx",
+    "audit_baltimore",
     "monit"
   ]
 }
