@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'mechanize'
 
 group :production do
-  gem 'libv8'
+  gem 'therubyracer'
 end
 
 group :development do
