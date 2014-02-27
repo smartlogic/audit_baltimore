@@ -201,7 +201,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   haml-rails
   jquery-rails
-  libv8
   mechanize
   pg
   pry-rails
