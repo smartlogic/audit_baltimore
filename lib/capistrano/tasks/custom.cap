@@ -1,0 +1,14 @@
+# vim: set ft=ruby:
+
+namespace :custom do
+  desc 'Create the .rbenv-version file'
+  task :rbenv_version do
+    on roles(:app) do
+      within release_path do
+        with :rbenv_root => fetch(:rbenv_path) do
+          execute :rbenv, :local, '2.1.0'
+        end
+      end
+    end
+  end
+end

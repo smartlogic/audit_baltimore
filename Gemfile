@@ -12,6 +12,16 @@ gem 'turbolinks'
 gem 'haml-rails'
 gem 'mechanize'
 
+group :production do
+  gem 'libv8'
+end
+
+group :development do
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
