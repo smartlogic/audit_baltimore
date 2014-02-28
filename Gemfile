@@ -20,6 +20,7 @@ group :development do
   gem 'capistrano', '~> 3.1'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'net-ssh', '~> 2.7.0'
 end
 
 group :development, :test do
