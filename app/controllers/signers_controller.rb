@@ -15,6 +15,12 @@ class SignersController < ApplicationController
     end
   end
 
+  def send_pdf
+    PdfGenerator.perform_async(current_signer.id)
+
+    redirect_to verified_signer_url
+  end
+
   private
 
   def current_signer

@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml-rails'
 gem 'mechanize'
+gem 'sidekiq'
+gem 'prawn'
 
 group :production do
   gem 'therubyracer'
