@@ -1,1 +1,4 @@
-server 'localhost', :user => "deploy", :roles => %w{web app db}, :port => 2222
+server 'vagrant', :user => "deploy", :roles => %w{web app db}, :primary => true
+
+set :stage, :staging
+set :rails_env, :staging

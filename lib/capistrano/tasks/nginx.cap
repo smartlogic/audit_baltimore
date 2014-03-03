@@ -1,0 +1,26 @@
+# vim: set ft=ruby:
+
+namespace :nginx do
+  desc "Setup nginx configuration for this application"
+  task :setup do
+    roles(:web).each do |host|
+      on "deploy@#{host.hostname}" do
+        template "nginx_unicorn.erb", "/tmp/nginx_conf"
+        execute :sudo, :mv, '/tmp/nginx_conf', "/etc/nginx/sites-enabled/#{fetch(:application)}"
+        execute :sudo, :rm, '-f', '/etc/nginx/sites-enabled/default'
+      end
+    end
+    invoke('nginx:restart')
+  end
+
+  %w[start stop restart].each do |command|
+    desc "#{command} nginx"
+    task command do
+      roles(:web).each do |host|
+        on "deploy@#{host.hostname}" do
+          execute :sudo, :service, :nginx, command
+        end
+      end
+    end
+  end
+end
