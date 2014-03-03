@@ -1,0 +1,64 @@
+@import "bourbon";
+@import "variables";
+
+body {
+  color: $black;
+  font-family: $sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  @include containing-box;
+  @include responsive-width;
+  > span {
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+    &.birthday {
+      font-size: 0;
+    }
+    &:last-child {
+      margin: 0;
+    }
+    label {
+      display: block;
+      color: $green;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 6px 0;
+    }
+    input {
+      @include form-element;
+      width: 100%;
+      &[type="submit"] {
+        @include button;
+      }
+    }
+    select {
+      @include form-element;
+      width: 30%;
+      background-image: url("select-arrow.png");
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-position: right center;
+      margin: 0 5% 0 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.verified {
+  @include containing-box;
+  text-align: center;
+  p {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+  }
+  a {
+    @include button;
+  }
+}

@@ -1,0 +1,73 @@
+@import "bourbon";
+
+$green: #1eeb78;
+$neutral: #b4b4a5;
+$black: #33332a;
+
+$sans-serif: 'Lato', sans-serif;
+
+$breakpoint1: 1200px;
+$breakpoint2: 960px;
+$breakpoint3: 768px;
+$breakpoint4: 600px;
+$breakpoint5: 480px;
+
+@mixin responsive-width {
+  @include box-sizing(border-box);
+  width: $breakpoint1;
+  @media (max-width: $breakpoint1) {
+    width: $breakpoint2;
+  }
+  @media (max-width: $breakpoint2) {
+    width: $breakpoint3;
+  }
+  @media (max-width: $breakpoint3) {
+    width: $breakpoint4;
+  }
+  @media (max-width: $breakpoint4) {
+    width: $breakpoint5;
+  }
+  @media (max-width: $breakpoint5) {
+    width: 100%;
+  }
+}
+
+@mixin containing-box {
+  @include responsive-width;
+  max-width: 640px; 
+  border: 1px solid $neutral;
+  border-radius: 3px; 
+  margin: 20px auto 0 auto;
+  padding: 20px;
+}
+
+@mixin form-element {
+  @include box-sizing(border-box);
+  @include appearance(none);
+  color: $green;
+  font-size: 17px;
+  border: 1px solid $neutral;
+  border-radius: 3px;
+  margin: 0;
+  padding: 10px 20px;
+  &:focus {
+    @include box-shadow(inset 0 0 0 1px $neutral);
+    color: $black;;
+    outline: none;
+  }
+}
+
+@mixin button {
+  display: block;
+  color: #fff;
+  background-color: $green;
+  font-size: 17px;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  padding: 16px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($green, 8%);
+  }
+}

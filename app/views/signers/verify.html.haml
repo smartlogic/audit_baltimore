@@ -1,14 +1,19 @@
 = form_for current_signer do |f|
-  = f.label :first_name, "First Name"
-  = f.text_field :first_name
+  %span
+    = f.label :first_name, "First Name"
+    = f.text_field :first_name
 
-  = f.label :last_name, "Last Name"
-  = f.text_field :last_name
+  %span
+    = f.label :last_name, "Last Name"
+    = f.text_field :last_name
 
-  = f.label :birthday
-  = f.date_select :birthday, :start_year => 1900, :end_year => Date.today.year
+  %span.birthday
+    = f.label :birthday
+    = f.date_select :birthday, :start_year => 1900, :end_year => Date.today.year
 
-  = f.label :zipcode, "Zip Code"
-  = f.text_field :zipcode
+  %span
+    = f.label :zipcode, "Zip Code"
+    = f.text_field :zipcode
 
-  = f.submit "Verify"
+  %span
+    = f.submit "Verify"
