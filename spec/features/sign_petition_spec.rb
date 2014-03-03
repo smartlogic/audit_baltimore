@@ -21,6 +21,10 @@ describe "Signing the peition" do
     click_on "Verify"
 
     expect(page).to have_content("123 Elm St")
+
+    click_on "Send PDF"
+
+    expect(PdfGenerator.jobs.count).to eq(1)
   end
 
   example "User signing the peition bad data" do

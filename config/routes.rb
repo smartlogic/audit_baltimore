@@ -3,6 +3,7 @@ AuditBaltimore::Application.routes.draw do
     collection do
       get :verify
       get :verified
+      get :send_pdf
     end
   end
 
