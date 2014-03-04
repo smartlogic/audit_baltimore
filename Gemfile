@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'mechanize'
 gem 'sidekiq'
 gem 'prawn'
+gem 'bourbon'
 
 group :production do
   gem 'therubyracer'

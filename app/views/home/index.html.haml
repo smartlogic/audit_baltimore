@@ -1,5 +1,7 @@
 = form_for Signer.new, :url => signer_path do |f|
-  = f.label :email
-  = f.text_field :email
+  %span
+    = f.label :email
+    = f.text_field :email
 
-  = f.submit "Next"
+  %span
+    = f.submit "Next"
