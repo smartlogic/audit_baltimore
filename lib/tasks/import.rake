@@ -7,6 +7,9 @@ task :import_voters => [:environment] do
       voter_hash[key.downcase] = row[key]
     end
 
+    voter_hash["firstname"] = voter_hash["firstname"].downcase
+    voter_hash["lastname"] = voter_hash["lastname"].downcase
+
     Voter.create(voter_hash)
   end
 end
