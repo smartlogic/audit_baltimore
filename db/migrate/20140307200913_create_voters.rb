@@ -1,53 +1,53 @@
 class CreateVoters < ActiveRecord::Migration
   def change
     create_table :voters do |t|
-      t.integer :vtrid # dECIMAL(22)
-      t.string :lastname # sTRING(30)
-      t.string :firstname # sTRING(30)
-      t.string :middlename # sTRING(30)
-      t.string :suffix # sTRING(30)
-      t.string :dob # sTRING(10)
-      t.string :gender # sTRING(1)
-      t.string :party # sTRING(5)
-      t.integer :house_number # dECIMAL(22)
-      t.string :house_suffix # sTRING(10)
-      t.string :street_predirection # sTRING(10)
-      t.string :streetname # sTRING(50)
-      t.string :streettype # sTRING(10)
-      t.string :street_postdirection # sTRING(10)
-      t.string :unittype # sTRING(10)
-      t.string :unitnumber # sTRING(20)
-      t.string :address # sTRING(167)
-      t.string :non_std_address # sTRING(256)
-      t.string :residentialcity # sTRING(256)
-      t.string :residentialstate # sTRING(2)
-      t.string :residentialzip5 # sTRING(5)
-      t.string :residentialzip4 # sTRING(4)
-      t.string :mailingaddress # sTRING(256)
-      t.string :mailingcity # sTRING(256)
-      t.string :mailingstate # sTRING(2)
-      t.string :mailingzip5 # sTRING(5)
-      t.string :mailingzip4 # sTRING(4)
-      t.string :country # sTRING(128)
-      t.string :status_code # sTRING(10)
-      t.datetime :state_registration_date # dATEtIME(10)
-      t.datetime :county_registration_date # dATEtIME(10)
-      t.string :precinct # sTRING(10)
-      t.string :split # sTRING(10)
-      t.string :county # sTRING(128)
-      t.string :congressional_districts # sTRING(10)
-      t.string :legislative_districts # sTRING(10)
-      t.string :councilmanic_districts # sTRING(10)
-      t.string :ward_districts # sTRING(10)
-      t.string :municipal_districts # sTRING(10)
-      t.string :commissioner_districts # sTRING(10)
-      t.string :school_districts # sTRING(10)
+      t.integer :vtrid
+      t.string :lastname
+      t.string :firstname
+      t.string :middlename
+      t.string :suffix
+      t.string :dob
+      t.string :gender
+      t.string :party
+      t.string :house_number
+      t.string :house_suffix
+      t.string :street_predirection
+      t.string :streetname
+      t.string :streettype
+      t.string :street_postdirection
+      t.string :unittype
+      t.string :unitnumber
+      t.string :address
+      t.string :non_std_address
+      t.string :residentialcity
+      t.string :residentialstate
+      t.string :residentialzip5
+      t.string :residentialzip4
+      t.string :mailingaddress
+      t.string :mailingcity
+      t.string :mailingstate
+      t.string :mailingzip5
+      t.string :mailingzip4
+      t.string :country
+      t.string :status_code
+      t.string :state_registration_date
+      t.string :county_registration_date
+      t.string :precinct
+      t.string :split
+      t.string :county
+      t.string :congressional_districts
+      t.string :legislative_districts
+      t.string :councilmanic_districts
+      t.string :ward_districts
+      t.string :municipal_districts
+      t.string :commissioner_districts
+      t.string :school_districts
     end
 
     add_column :signers, :voter_id, :integer
-    remove_column :signers, :address_line_1
-    remove_column :signers, :address_line_2
+    remove_column :signers, :address_line_1, :string
+    remove_column :signers, :address_line_2, :string
 
-    add_index :voters, [:firstname, :lastname, :residentialzip5]
+    add_index :voters, [:firstname, :lastname, :mailingzip5]
   end
 end
