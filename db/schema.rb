@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307212651) do
+ActiveRecord::Schema.define(version: 20140307222445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,5 +71,7 @@ ActiveRecord::Schema.define(version: 20140307212651) do
     t.string  "commissioner_districts"
     t.string  "school_districts"
   end
+
+  add_index "voters", ["firstname", "lastname", "residentialzip5"], name: "index_voters_on_firstname_and_lastname_and_residentialzip5", using: :btree
 
 end
