@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225205015) do
+ActiveRecord::Schema.define(version: 20140307200913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,55 @@ ActiveRecord::Schema.define(version: 20140225205015) do
     t.string   "last_name"
     t.date     "birthday"
     t.string   "zipcode"
-    t.string   "address_line_1"
-    t.string   "address_line_2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "voter_id"
   end
+
+  create_table "voters", force: true do |t|
+    t.integer  "vtrid"
+    t.string   "lastname"
+    t.string   "firstname"
+    t.string   "middlename"
+    t.string   "suffix"
+    t.string   "dob"
+    t.string   "gender"
+    t.string   "party"
+    t.integer  "house_number"
+    t.string   "house_suffix"
+    t.string   "street_predirection"
+    t.string   "streetname"
+    t.string   "streettype"
+    t.string   "street_postdirection"
+    t.string   "unittype"
+    t.string   "unitnumber"
+    t.string   "address"
+    t.string   "non_std_address"
+    t.string   "residentialcity"
+    t.string   "residentialstate"
+    t.string   "residentialzip5"
+    t.string   "residentialzip4"
+    t.string   "mailingaddress"
+    t.string   "mailingcity"
+    t.string   "mailingstate"
+    t.string   "mailingzip5"
+    t.string   "mailingzip4"
+    t.string   "country"
+    t.string   "status_code"
+    t.datetime "state_registration_date"
+    t.datetime "county_registration_date"
+    t.string   "precinct"
+    t.string   "split"
+    t.string   "county"
+    t.string   "congressional_districts"
+    t.string   "legislative_districts"
+    t.string   "councilmanic_districts"
+    t.string   "ward_districts"
+    t.string   "municipal_districts"
+    t.string   "commissioner_districts"
+    t.string   "school_districts"
+  end
+
+  add_index "voters", ["firstname", "lastname", "residentialzip5"], name: "index_voters_on_firstname_and_lastname_and_residentialzip5", using: :btree
 
 end

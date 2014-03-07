@@ -2,10 +2,14 @@ require 'spec_helper'
 
 describe "Signing the peition" do
   example "User signing the petition" do
-    stub_request(:get, "https://voterservices.elections.state.md.us/VoterSearch").
-      to_return(:body => File.read("spec/fixtures/search.html"), :headers => { "Content-Type" => "text/html" })
-    stub_request(:post, "https://voterservices.elections.state.md.us/VoterSearch").
-      to_return(:body => File.read("spec/fixtures/results.html"), :headers => { "Content-Type" => "text/html" })
+    Voter.create({
+      :lastname => "User",
+      :firstname => "Eric",
+      :address => "123 Elm St",
+      :residentialcity => "Baltimore",
+      :residentialstate => "MD",
+      :residentialzip5 => "21224"
+    })
 
     visit root_path
 
@@ -28,11 +32,6 @@ describe "Signing the peition" do
   end
 
   example "User signing the peition bad data" do
-    stub_request(:get, "https://voterservices.elections.state.md.us/VoterSearch").
-      to_return(:body => File.read("spec/fixtures/search.html"), :headers => { "Content-Type" => "text/html" })
-    stub_request(:post, "https://voterservices.elections.state.md.us/VoterSearch").
-      to_return(:body => File.read("spec/fixtures/bad-results.html"), :headers => { "Content-Type" => "text/html" })
-
     visit root_path
 
     fill_in "Email", :with => "eric@example.com"

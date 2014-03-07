@@ -2,10 +2,18 @@ require "spec_helper"
 
 describe PdfGenerator do
   it "should generate a pdf and mail it to the user" do
+    voter = Voter.create({
+      :lastname => "User",
+      :firstname => "Eric",
+      :address => "123 Elm St",
+      :residentialcity => "Baltimore",
+      :residentialstate => "MD",
+      :residentialzip5 => "21224"
+    })
+
     signer = Signer.create({
       :email => "eric@example.com",
-      :address_line_1 => "123 Elm St",
-      :address_line_2 => "Baltimore, MD 21224"
+      :voter => voter
     })
 
     PdfGenerator.new.perform(signer.id)

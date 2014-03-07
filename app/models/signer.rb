@@ -1,12 +1,24 @@
 class Signer < ActiveRecord::Base
+  belongs_to :voter
 
-  def verify!(verifier = VoterVerifier)
-    address = verifier.new(self).verify!
+  delegate :address, :residentialcity, :residentialstate, :residentialzip5,
+    :to => :voter, :allow_nil => true
 
-    if address
-      self.address_line_1 = address.line_1
-      self.address_line_2 = address.line_2
-      save
-    end
+  def verify!
+    self.voter = Voter.where({
+      :lastname => last_name,
+      :firstname => first_name,
+      :residentialzip5 => zipcode
+    }).first
+    save!
+    voter
+  end
+
+  def address_line_1
+    address
+  end
+
+  def address_line_2
+    "#{residentialcity}, #{residentialstate} #{residentialzip5}"
   end
 end
