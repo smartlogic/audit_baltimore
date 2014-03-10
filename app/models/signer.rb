@@ -6,8 +6,8 @@ class Signer < ActiveRecord::Base
 
   def verify!
     self.voter = Voter.where({
-      :lastname => last_name.downcase,
-      :firstname => first_name.downcase,
+      :lastname => last_name.upcase,
+      :firstname => first_name.upcase,
       :residentialzip5 => zipcode
     }).first
     save!

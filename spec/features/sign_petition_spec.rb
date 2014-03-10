@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Signing the peition" do
   example "User signing the petition" do
     Voter.create({
-      :lastname => "user",
-      :firstname => "eric",
+      :lastname => "USER",
+      :firstname => "ERIC",
       :address => "123 Elm St",
       :residentialcity => "Baltimore",
       :residentialstate => "MD",
